@@ -1,0 +1,48 @@
+WikiCollectables.com
+Buy/Sell Extension
+September 06, 2008
+
+Instructions for installing the MediaWiki Buy/Sell Extension on the following:
+ - MediaWiki: 1.10.1 - PHP: 5.2.5 (cgi) - MySQL: 4.1.22-standard-log 
+
+The "BuySell" folder contains the files and folders required for adding the Buy/Sell Extension to MediaWiki.  Do a "find" for "BuySell Extension" in the modified files (AutoLoader.php, Wiki.php, and MonoBook.php) to view comments on changes. 
+
+Replace or add the following files and folders to MediaWiki:
+1.  Replace Article.php ("includes" folder)
+2.  Replace AutoLoader.php  ("includes" folder)
+3.  Add "buysell" folder to the "extensions" folder
+4.  Replace Image.php file ("includes" folder)
+5.  Replace ImageGallery.php file ("includes" folder)
+6.  Add imageviewer.php (root directory)
+7.  Replace MediaTransformOutput.php file ("includes" folder)
+8.  Replace MessagesEn.php file ("languages" -> "messages" folder)
+9.  Replace MonoBook.php  ("skins" folder)
+10.  Add robots.txt (root directory)
+11.  Replace Skin.php ("includes" folder)
+12.  Add SpecialArticleswiththeMostAds.php ("includes" folder)
+13.  Add SpecialGalleryofNewAdFiles.php file ("includes" folder)
+14.  Replace SpecialPage.php ("includes" folder)
+15.  Replace SpecialPreferences.php ("includes" folder)
+16.  Replace Wiki.php  ("includes" folder)
+
+Notes:
+
+1. If upgrading, save the images in the "ad_images" folder.
+2. Update robots.txt if moving to dev-sites.
+3. Change the "ad_images" and "ad_images" -> "temp" folders to writable by chmod "777"
+4. Add "xxx_ads" and "xxx_adimage" tables to database (ads.sql & adimage.sql)
+5. Change "interwiki" links in MonoBook.php
+6. Add page_min_price and page_max_price to coi_page to SQL with this command:
+ALTER TABLE `coi_page` ADD `page_min_price` FLOAT NULL ,
+ADD `page_max_price` FLOAT NULL ;
+
+Find & Replace (BuySellConfig.php, SuperDeleterAd.php, wcConfig.php) the following:
+
+1.  "database_name"
+2.  "database_username"
+3.  "database_password"
+4.  "userdir" (wikiamer, wikicoll, etc.)
+5.  "/wikifolder.com/" (wikicoins.com, dev-wiki.com, wikicoins.com etc.
+6.  "escrowfolder.com"  (wikisafe.com, dev-escrow.com)
+7.  "https://the-escrow-url.com"  (http://dev-escrow.com or https://wikisafe.com)
+

@@ -1,0 +1,28 @@
+WikiCollectables.com
+WikiCoins Skin
+September 12, 2011
+
+Instructions for installing the WikiComics Skin files on the following:
+ - MediaWiki: 1.10.1 - PHP: 5.2.5 - MySQL: 4.1.22-standard-log 
+
+The "WikiCoins CSS" folder contains the files required for adding the WikiComics Skin to MediaWiki.
+
+Add the following files and folder to MediaWiki:
+1.  replace bullet.gif  ("skins" -> "monobook" folder)
+2.  replace "common" -> bullet.gif  ("skins" -> "common" -> "images" folder)
+3.  add edit.gif  ("skins" -> "monobook" folder)
+4.  add gnu-fdl.png  ("skins" -> "common" -> "images" folder)  
+5.  add login.jpg  ("skins" -> "monobook" folder)
+6.  replace main.css  ("skins" -> "monobook" folder)
+7.  replace "objects" folder ("extensions" -> "buysell" -> "objects" folder)
+8.  add "splash" folder to root directory
+9.  replace swlabel.gif ("extensions" -> "buysell" -> "objects" folder)
+10.  delete  user.gif ("skins" -> "monobook" folder)
+11.  replace wiki.png  ("skins" -> "common" -> "images" folder)  
+
+Notes: 
+1.  "Find and Replace" the following colors in the "view" folder ("wiki" -> "extensions" -> "buysell" - "view" folder):
+ - Replace "5B4B3F" with "2B241E"
+ - Replace "463F39" with "696460"
+ - Replace "6B6A65" with "6B6A65"
+ - Replace "BCBCBC" with "BCBCBC"

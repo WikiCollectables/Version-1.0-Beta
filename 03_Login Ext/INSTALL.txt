@@ -1,0 +1,25 @@
+WikiCollectables.com
+Enhanced User Login Extension
+June 8, 2008
+
+Instructions for installing the MediaWiki Enhanced User Login Extension on the following:
+ - MediaWiki: 1.10.1 - PHP: 5.2.5 (cgi) - MySQL: 4.1.22-standard-log 
+
+The "EnhUserLogin" folder contains the files required for adding the WikiCollectables Enhanced User Login Extension to MediaWiki.  Do a "find" for "Enhanced User Login Extension" in the modified files (Database.php, SkinTemplate.php, SpecialUserlogin.php, User.php, Userlogin.php) to view comments on changes to the original MediaWiki code. 
+
+Add or replace the following file in MediaWiki:
+1.  Replace Database.php ("wiki" -> "includes" folder)
+2.  Replace DefaultSettings.php  ("includes" folder)
+3.  Add EscrowRedirPage.php  ("includes" folder)
+4.  Add session_from_wikisafe.php  ("includes" folder)
+5.  Replace SkinTemplate.php  ("includes" folder)
+6.  Replace SpecialUserlogin.php  ("includes" folder)
+7.  Replace User.php ("includes" folder)
+8.  Replace Userlogin.php ("includes" -> "templates" folder)
+9.  Add USOnly.gif ("skins" -> "monobook" folder)
+10.  Add "usrlogin" folder to "extensions" folder
+
+Notes:
+1. Add "users" table to database (users.sql)
+2. Change SpecialUserlogin.php directory name on line 10
+3. Change Spam URL & wiki names in Userlogin.php 

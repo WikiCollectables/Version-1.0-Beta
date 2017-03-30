@@ -1,0 +1,50 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww15380\viewh17680\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 Copy the following into SQL as an SQL Function:\
+\
+======== Copy Start =================\
+\
+CREATE TABLE IF NOT EXISTS `cas_adimage` (\
+  `ad_id` int(8) unsigned NOT NULL default '0',\
+  `img_name` varchar(255) character set latin1 collate latin1_bin NOT NULL default '',\
+  `img_size` int(8) unsigned NOT NULL default '0',\
+  `img_width` int(5) NOT NULL default '0',\
+  `img_height` int(5) NOT NULL default '0',\
+  `img_metadata` mediumblob NOT NULL,\
+  `img_bits` int(3) NOT NULL default '0',\
+  `img_media_type` enum('UNKNOWN','BITMAP','DRAWING','AUDIO','VIDEO','MULTIMEDIA','OFFICE','TEXT','EXECUTABLE','ARCHIVE') default NULL,\
+  `img_major_mime` enum('unknown','application','audio','image','text','video','message','model','multipart') NOT NULL default 'unknown',\
+  `img_minor_mime` varchar(32) NOT NULL default 'unknown',\
+  `img_description` tinyblob NOT NULL,\
+  `img_user` int(5) unsigned NOT NULL default '0',\
+  `img_user_text` varchar(255) character set latin1 collate latin1_bin NOT NULL default '',\
+  `img_timestamp` varchar(14) character set latin1 collate latin1_bin NOT NULL default '',\
+  `page_id` int(11) NOT NULL default '0',\
+  PRIMARY KEY  (`img_name`),\
+  KEY `img_size` (`img_size`),\
+  KEY `img_timestamp` (`img_timestamp`)\
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;\
+\
+========= Copy End ================\
+\
+======== Copy Start =================\
+\
+CREATE TABLE IF NOT EXISTS `cas_ads` (\
+  `ad_id` int(8) unsigned NOT NULL auto_increment,\
+  `user_id` int(5) unsigned NOT NULL default '0',\
+  `page_id` int(8) unsigned NOT NULL default '0',\
+  `ad_text` varchar(255) NOT NULL default '',\
+  `ad_type` char(1) NOT NULL default '',\
+  `ad_amount` decimal(8,2) NOT NULL default '0.00',\
+  `weight_lbs` decimal(4,2) default NULL,\
+  `weight_ozs` decimal(4,2) default NULL,\
+  `post_date` datetime NOT NULL default '0000-00-00 00:00:00',\
+  PRIMARY KEY  (`ad_id`),\
+  KEY `user_id` (`user_id`,`page_id`)\
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;\
+\
+========= Copy End ================}
