@@ -1,4 +1,4 @@
-Version-1.0-Beta
+e-mediawiki (version-1.0-Beta)
 ================
 
 Version 1.0 Beta of e-mediawiki
