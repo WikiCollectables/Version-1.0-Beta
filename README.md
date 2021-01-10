@@ -1,4 +1,4 @@
-e-mediawiki (version-1.0-Beta)
+e-commerce extension(s) to mediawiki
 ================
 
 Version 1.0 Beta of e-mediawiki
